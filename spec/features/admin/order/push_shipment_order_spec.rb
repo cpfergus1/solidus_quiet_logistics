@@ -27,7 +27,8 @@ RSpec.describe 'Push shipment order', type: :feature, js: true do
     context 'when shipment is not pushed to QL' do
       let(:pushed) { false }
 
-      it 'shows push shipment order button' do
+      it 'shows push shipment order button', :js do
+        save_and_open_page
         expect(page).to have_css('.push-shipment')
       end
     end

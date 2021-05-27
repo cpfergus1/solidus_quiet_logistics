@@ -97,7 +97,7 @@ describe 'Create Return Authorization', type: :feature, js: true do
     before { visit spree.edit_admin_order_path(order) }
 
     context 'when quiet_logistics is enabled' do
-      it 'is visible and creates the RMA with the shipment inventory units' do
+      it 'is visible and creates the RMA with the shipment inventory units', :js do
         expect(page).to have_selector('.shipment-rma', count: order.shipments.count)
 
         find_all('.shipment-rma').first.click
